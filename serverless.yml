@@ -1,0 +1,22 @@
+service: twilio-actions
+
+provider:
+  name: aws
+  runtime: nodejs4.3
+  environment:
+    TWILIO_ACCOUNT_SID: YOUR-TWILIO-ACCOUNT-SID-HERE
+    TWILIO_AUTH_TOKEN: YOUR-TWILIO-AUTH-TOKEN-HERE
+    TWILIO_PHONE_NUMBER: YOUR-TWILIO-PHONE-NUMBER-HERE
+
+functions:
+  sendText:
+    handler: handler.sendText
+    events:
+      - http:
+          path: api/sendText
+          method: post
+          integration: lambda
+          cors: true
+
+plugins:
+  - serverless-alpha

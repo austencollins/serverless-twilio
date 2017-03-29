@@ -1,0 +1,8 @@
+functions:
+  - name: twilioSendText
+    version: 0.0.3
+    description: Send a text message (SMS) via Twilio
+    handler: handler.sendText
+    runtime: 'nodejs4.3'
+    license: 'MIT'
+    readme: ./twilioSendText.md
